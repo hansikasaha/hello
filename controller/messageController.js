@@ -12,7 +12,8 @@ export const sendMessage = catchAsyncErrors(async (req, res, next) => {
         success: true,
         message: "Message Sent Successfully!",
       });
-    })
+    });
+    
 
 
 export const getAllMessages = catchAsyncErrors(async (req, res, next) => {

@@ -33,7 +33,7 @@ export const postAppointment = catchAsyncErrors(async (req, res, next) => {
     !doctor_lastName ||
     !address
   ) {
-    return next(new ErrorHandler("Please Fill Full Form!", 400));
+    return next(new ErrorHandler("Please Fill Full Form!", 404));
   }
 
   /////////////////////////////////// if two doctors are with the same name 
