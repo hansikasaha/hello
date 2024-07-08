@@ -35,12 +35,12 @@ export const patientRegister = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHandler("Please Fill Full Form!", 400));
   }
 
-  let user = await User.findOne({ email });
-  if (user) {
+  const isRegistered = await User.findOne({ email });
+  if (isRegistered) {
     return next(new ErrorHandler("User already Registered!", 400));
   }
 
-  user = await User.create({
+  const user = await User.create({
     firstName,
     lastName,
     email,
